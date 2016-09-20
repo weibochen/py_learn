@@ -29,4 +29,15 @@ for i in range(num):
 		print('回文')
 	else:
 		pass
+		
+		
+#第三种方法
+#直接把字符串反转后与原字符串比较
+
+# ---*---coding=utf-8---*---
+char = input("请输入字符串: ")
+if char == char[::-1]:
+	print('回文结构')
+else:
+	print('不是回文结构')
 
