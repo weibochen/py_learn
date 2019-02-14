@@ -1,5 +1,5 @@
 # coding:utf-8
-vowel_char = ['a', 'e', 'i', 'o', 'u']
+vowel_char = set('aeiou')
 a = input('请输入英文单词：')
 a = a.lower()
 num = 0
