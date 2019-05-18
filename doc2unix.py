@@ -23,7 +23,7 @@ def str2unix(input_str: str) -> str:
     -------
         The converted string
     """
-    r_str = input_str.replace('\r\n', '\n')
+    r_str = input_str.replace("\r\n", "\n")
     return r_str
 
 
@@ -40,19 +40,19 @@ def dos2unix(source_file: str, dest_file: str):
     """
     # NOTE: Could add file existence checking and file overwriting
     # protection
-    with open(source_file, 'r') as reader:
+    with open(source_file, "r") as reader:
         dos_content = reader.read()
 
     unix_content = str2unix(dos_content)
 
-    with open(dest_file, 'w') as writer:
+    with open(dest_file, "w") as writer:
         writer.write(unix_content)
 
 
 if __name__ == "__main__":
     # Create our Argument parser and set its description
     parser = argparse.ArgumentParser(
-        description="Script that converts a DOS like file to an Unix like file",
+        description="Script that converts a DOS like file to an Unix like file"
     )
 
     # Add the arguments:
@@ -61,15 +61,12 @@ if __name__ == "__main__":
 
     # Note: the use of the argument type of argparse.FileType could
     # streamline some things
-    parser.add_argument(
-        'source_file',
-        help='The location of the source '
-    )
+    parser.add_argument("source_file", help="The location of the source ")
 
     parser.add_argument(
-        '--dest_file',
-        help='Location of dest file (default: source_file appended with `_unix`',
-        default=None
+        "--dest_file",
+        help="Location of dest file (default: source_file appended with `_unix`",
+        default=None,
     )
 
     # Parse the args (argparse automatically grabs the values from
@@ -83,6 +80,6 @@ if __name__ == "__main__":
     # create a new file based on the old one
     if d_file is None:
         file_path, file_extension = os.path.splitext(s_file)
-        d_file = f'{file_path}_unix{file_extension}'
+        d_file = f"{file_path}_unix{file_extension}"
 
     dos2unix(s_file, d_file)

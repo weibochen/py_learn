@@ -9,7 +9,7 @@ import time
 def test(num):
     ss = 0
     for i in range(num):
-        ss += 2**i
+        ss += 2 ** i
     return ss
 
 
@@ -19,4 +19,4 @@ if __name__ == "__main__":
     ss = test(num)
     print(ss)
     end = time.time()
-    print('Run time: ', round(end - start, 2))
+    print("Run time: ", round(end - start, 2))
